@@ -18,11 +18,10 @@ const Login: React.FC = () => {
       setEntry("/page/Inicio")
     }else{
       setEntry("/logo")
-    }
-      // console.log( `${res ? "login success" : "login failed"}`);*/
+    }*/
+   // console.log( `${res ? 'login success' : 'login failed'}`);
   }
 
-  
   return (
     <IonPage>
       <IonContent >

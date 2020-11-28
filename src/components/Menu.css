@@ -53,15 +53,6 @@ ion-menu.md ion-list#list .perfil{
   margin-top: 35px;
 }
 
-#perfil img{
-  display: block;
-  float: left;
-  height: 60px;
-  margin-right: 0px;
-  margin-left: 96px;
-  margin-bottom: 35px;
-}
-
 .btnCircle{
   margin-top: -12px;
   width: 50px;

@@ -12,7 +12,6 @@ const Carrito: React.FC = () => {
       <IonRow>
         <IonCol>Producto</IonCol>
         <IonCol> Unidades </IonCol>
-        <IonCol>Precio unit.</IonCol>
         <IonCol>Precio total</IonCol>
         <IonCol></IonCol>
       </IonRow>

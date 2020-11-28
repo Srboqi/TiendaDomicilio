@@ -18,7 +18,7 @@ const firebaseConfig = {
   export async function loginUser(username: string, password:string ){
    //const email = username;
    try{
-     const res  = await firebase.auth().signInWithEmailAndPassword(/*email*/username, password)
+     const res  = await firebase.auth().signInWithEmailAndPassword(/*email*/username, password);
       
     }
     catch(error){

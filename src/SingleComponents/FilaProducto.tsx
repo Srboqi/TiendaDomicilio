@@ -3,6 +3,8 @@ import {  IonRow, IonCol, IonIcon, IonButton } from '@ionic/react';
 import { pencilOutline, addCircleOutline, removeCircleOutline, trashOutline} from 'ionicons/icons';
 import './Clasificacion.css'
 
+import '../components/Productos.css'
+
 const FilaProducto: React.FC = () => {
     const [count, setCount] = useState(1);
     const [precio, setPrecio] = useState(1200);
@@ -10,17 +12,18 @@ const FilaProducto: React.FC = () => {
     return(
       <IonRow>  
             <IonCol>{/**/}Arroz Roa 500g</IonCol>
-            <IonCol> <IonButton className="btnCircle" onClick={() =>{ if(count > 1 ){ setCount(count - 1);
-             setPrecio(precio-precioUnit)}}} ><IonIcon md={removeCircleOutline}> 
-            </IonIcon>
+            <IonCol> 
+              <IonButton className="btnCircle" onClick={() =>{
+                 if(count > 1 ){ setCount(count - 1);
+             setPrecio(precio-precioUnit)}}} >
+               <IonIcon md={removeCircleOutline}></IonIcon>
             </IonButton> {count}<IonButton  className="btnCircle" onClick={() => {setCount(count + 1);
-             setPrecio(precioUnit*(count+1))}}>
+             setPrecio(precio+precioUnit)}}>
             <IonIcon md={addCircleOutline}> </IonIcon> </IonButton>
             </IonCol>
-            <IonCol>{precioUnit}</IonCol>
-            <IonCol>{precio}</IonCol>
-            <IonCol><IonButton  color = "danger" className="btnCircle"> <IonIcon md={trashOutline}> </IonIcon> </IonButton> 
-            <IonButton className="btnCircle"  > <IonIcon md={pencilOutline}> </IonIcon> </IonButton> 
+            <IonCol>{precio} 
+            <br/>
+            <IonButton  color = "danger" className="btnCircle"> <IonIcon md={trashOutline}> </IonIcon> </IonButton> 
             </IonCol>
       </IonRow>
     );
