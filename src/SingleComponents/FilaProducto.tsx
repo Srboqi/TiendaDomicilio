@@ -1,29 +1,31 @@
 import React, { useState } from 'react';
 import {  IonRow, IonCol, IonIcon, IonButton } from '@ionic/react';
-import { pencilOutline, addCircleOutline, removeCircleOutline, trashOutline} from 'ionicons/icons';
+import {addCircleOutline, removeCircleOutline, trashOutline} from 'ionicons/icons';
 import './Clasificacion.css'
 
-import '../components/Productos.css'
+interface DatosProduct {
+  name: string;
+  precio: number;
+}
 
-const FilaProducto: React.FC = () => {
+const FilaProducto: React.FC<DatosProduct> = ({name, precio}) => {
+
     const [count, setCount] = useState(1);
-    const [precio, setPrecio] = useState(1200);
-    const precioUnit = 1200; 
+    const [nuevoPrecio, setNuevoPrecio] = useState(precio);
+    const [nombre] = useState(name);
+    const precioUnit = precio; 
     return(
       <IonRow>  
-            <IonCol>{/**/}Arroz Roa 500g</IonCol>
-            <IonCol> 
-              <IonButton className="btnCircle" onClick={() =>{
-                 if(count > 1 ){ setCount(count - 1);
-             setPrecio(precio-precioUnit)}}} >
-               <IonIcon md={removeCircleOutline}></IonIcon>
+            <IonCol>{nombre}</IonCol>
+            <IonCol> <IonButton className="btnCircle" onClick={() =>{ if(count > 1 ){ setCount(count - 1);
+             setNuevoPrecio(nuevoPrecio-precioUnit)}}} ><IonIcon md={removeCircleOutline}> 
+            </IonIcon>
             </IonButton> {count}<IonButton  className="btnCircle" onClick={() => {setCount(count + 1);
-             setPrecio(precio+precioUnit)}}>
+             setNuevoPrecio(precioUnit+nuevoPrecio)}}>
             <IonIcon md={addCircleOutline}> </IonIcon> </IonButton>
             </IonCol>
-            <IonCol>{precio} 
-            <br/>
-            <IonButton  color = "danger" className="btnCircle"> <IonIcon md={trashOutline}> </IonIcon> </IonButton> 
+            <IonCol>{nuevoPrecio}</IonCol>
+            <IonCol><IonButton  color = "danger" className="btnCircle"> <IonIcon md={trashOutline}> </IonIcon> </IonButton>
             </IonCol>
       </IonRow>
     );
